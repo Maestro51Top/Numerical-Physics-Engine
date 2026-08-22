@@ -6,10 +6,13 @@ scientific analysis, and computational physics.
 """
 
 from .solvers import euler
+
 from .analysis import (
     absolute_error,
     maximum_error,
     final_error,
+    estimate_convergence_order,
+    convergence_table,
 )
 
 __all__ = [
@@ -17,4 +20,6 @@ __all__ = [
     "absolute_error",
     "maximum_error",
     "final_error",
+    "estimate_convergence_order",
+    "convergence_table",
 ]
