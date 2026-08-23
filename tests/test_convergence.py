@@ -49,3 +49,35 @@ def test_convergence_table():
     assert np.isclose(table[1]["error_ratio"], 2.0)
 
     assert np.isclose(table[2]["error_ratio"], 2.0)
+
+def test_observed_convergence_order():
+    dt_values = np.array([
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+    ])
+
+    errors = dt_values ** 2
+
+    table = convergence_table(
+        dt_values,
+        errors,
+    )
+
+    assert np.isnan(table[0]["observed_order"])
+
+    assert np.isclose(
+        table[1]["observed_order"],
+        2.0,
+    )
+
+    assert np.isclose(
+        table[2]["observed_order"],
+        2.0,
+    )
+
+    assert np.isclose(
+        table[3]["observed_order"],
+        2.0,
+    )

@@ -5,7 +5,7 @@ A Python framework for numerical methods,
 scientific analysis, and computational physics.
 """
 
-from .solvers import euler
+from .solvers import euler, heun
 
 from .analysis import (
     absolute_error,
@@ -17,6 +17,7 @@ from .analysis import (
 
 __all__ = [
     "euler",
+    "heun",
     "absolute_error",
     "maximum_error",
     "final_error",
